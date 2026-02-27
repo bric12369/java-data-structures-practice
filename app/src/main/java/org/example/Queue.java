@@ -16,6 +16,12 @@ public class Queue {
         peopleInQueue.add(name);
     }
 
+    public void next(){
+        if (!peopleInQueue.isEmpty()) {
+            peopleInQueue.removeFirst();
+        }
+    }
+
     public ArrayList<String> state(){
         return this.peopleInQueue;
     }

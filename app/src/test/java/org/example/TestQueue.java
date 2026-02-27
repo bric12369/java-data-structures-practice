@@ -3,7 +3,6 @@ package org.example;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,5 +17,24 @@ public class TestQueue {
         queue.add("Jack");
         ArrayList<String> result2 = queue.state();
         Assert.assertEquals(List.of("Simon", "Jack"), result2);
+    }
+
+    @Test
+    public void nextRemovesFirstPersonFromQueue(){
+        Queue queue = new Queue();
+        queue.add("Simon");
+        queue.add("Jack");
+        queue.next();
+        Assert.assertEquals(List.of("Jack"), queue.state());
+
+        queue.next();
+        Assert.assertEquals(List.of(), queue.state());
+    }
+
+    @Test
+    public void nextDoesNothingIfQueueEmpty(){
+        Queue queue = new Queue();
+        queue.next();
+        Assert.assertEquals(List.of(), queue.state());
     }
 }
