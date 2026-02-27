@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Queue {
 
-    ArrayList<String> peopleInQueue = new ArrayList<>();
+    private ArrayList<String> peopleInQueue = new ArrayList<>();
 
     public static void main(String[] args) {
         Queue queue = new Queue();
