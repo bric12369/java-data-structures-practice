@@ -38,7 +38,7 @@ public class ScrabbleScore {
     public static int calculate(String word){
         int total = 0;
         for (int i = 0; i < word.length(); i++) {
-            Character letter = word.charAt(i);
+            Character letter = Character.toLowerCase(word.charAt(i));
             total += letterScores.get(letter);
         }
         return total;

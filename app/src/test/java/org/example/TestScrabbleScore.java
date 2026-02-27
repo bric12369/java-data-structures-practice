@@ -22,4 +22,10 @@ public class TestScrabbleScore {
 
         Assert.assertEquals(21, ScrabbleScore.calculate("quintuplet"));
     }
+
+    @Test
+    public void ignoresCase() {
+        Assert.assertEquals(29, ScrabbleScore.calculate("JAZZ"));
+        Assert.assertEquals(21, ScrabbleScore.calculate("quIntuPlEt"));
+    }
 }
